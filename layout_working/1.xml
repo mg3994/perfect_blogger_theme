@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:css='false' b:defaultmessages='true' b:layoutsVersion='3' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+    <meta charset='UTF-8'/>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'/>
+    <title><data:blog.pageTitle/></title>
+    
+    <b:skin><![CDATA[
+        /* [PASTE ALL CONTENTS OF THE style.css FILE BELOW HERE] */
+    ]]></b:skin>
+</head>
+<body>
+
+    <div id='sidebar-backdrop' onclick='toggleSidebarDrawer()'></div>
+
+    <aside id='sidebar'>
+        <div class='sidebar-header'>
+            <div class='brand-wrapper'>
+                <span class='brand-logo-text'>A</span>
+                <span class='brand-name'>Antinna</span>
+            </div>
+            <button aria-label='Close sidebar panel' class='btn-sidebar-close' onclick='toggleSidebarDrawer()'>&#215;</button>
+        </div>
+
+        <b:section class='sidebar-nav-pane' id='sidebar-widgets' maxwidgets='5' showaddelement='yes'>
+            
+            <b:widget id='LinkList1' locked='false' title='Navigation Menu' type='LinkList' version='2'>
+                <b:widget-settings>
+                    <b:widget-setting name='text-0'>Home</b:widget-setting>
+                    <b:widget-setting name='link-0'>/</b:widget-setting>
+                    <b:widget-setting name='text-1'>Services</b:widget-setting>
+                    <b:widget-setting name='link-1'>/search/label/Services</b:widget-setting>
+                    <b:widget-setting name='text-2'>Salons</b:widget-setting>
+                    <b:widget-setting name='link-2'>/search/label/Salons</b:widget-setting>
+                    <b:widget-setting name='text-3'>Bookings</b:widget-setting>
+                    <b:widget-setting name='link-3'>/p/bookings.html</b:widget-setting>
+                </b:widget-settings>
+                <b:includable id='main'>
+                    <ul class='nav-menu-list'>
+                        <b:loop values='data:links' var='link'>
+                            <li class='nav-menu-item'>
+                                <a expr:href='data:link.target'><data:link.name/></a>
+                            </li>
+                        </b:loop>
+                    </ul>
+                </b:includable>
+            </b:widget>
+
+        </b:section>
+
+        <div class='sidebar-interactive-modules'>
+            <div class='module-group'>
+                <button class='module-trigger expanded' onclick='toggleModuleDropdown("workspace-module")'>
+                    <span>Workspace Options</span>
+                    <span class='arrow-indicator' id='workspace-module-arrow'>&#9662;</span>
+                </button>
+                <ul class='module-nested-links' id='workspace-module'>
+                    <li><a href='#'><span class='bullet-point'>&#8226;</span> Nearby Helpers</a></li>
+                    <li><a href='#'><span class='bullet-point'>&#8226;</span> Active Bookings</a></li>
+                    <li><a href='#'><span class='bullet-point'>&#8226;</span> Customer Reviews</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class='sidebar-footer-action'>
+            <button class='btn-sidebar-action'>Share Platform</button>
+        </div>
+    </aside>
+
+    <div class='main-view-pipeline'>
+        
+        <b:section class='navbar-component' id='header' maxwidgets='1' showaddelement='no'>
+            
+            <b:widget id='HTML101' locked='true' title='Navbar Control Panel' type='HTML' version='2'>
+                <b:includable id='main'>
+                    <div class='navbar-inner-wrapper'>
+                        
+                        <div class='navbar-left-cluster'>
+                            <button aria-label='Open navigation sidebar' class='btn-menu-hamburger' onclick='toggleSidebarDrawer()'>&#9776;</button>
+                        </div>
+
+                        <div class='navbar-center-search'>
+                            <div class='search-field-wrapper'>
+                                <span class='search-lens-placeholder'>&#128269;</span>
+                                <form action='/search' method='get'>
+                                    <input class='search-text-input' name='q' placeholder='Search marketplace services...' type='text'/>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class='navbar-right-cluster'>
+                            <button aria-label='Toggle color mode' class='btn-theme-toggler' id='theme-toggle'>
+                                <span class='theme-icon moon-icon'>&#9790;</span>
+                                <span class='theme-icon sun-icon hidden'>&#9728;</span>
+                            </button>
+                        </div>
+                        
+                    </div>
+                </b:includable>
+            </b:widget>
+
+        </b:section>
+
+        <main class='scrollable-content-pane'>
+            <b:section class='content-max-width-restrictor' id='main-feed-stream' showelement='yes'>
+                
+                <b:widget id='HTML50' locked='false' title='Hero Showcase Unit' type='HTML' version='2'>
+                    <b:includable id='main'>
+                        <section class='hero-card-component'>
+                            <div class='hero-backdrop-gradient'></div>
+                            <div class='hero-inner-payload'>
+                                <h1 class='hero-display-title'>Find Trusted Local Handy Services Instantly</h1>
+                                <p class='hero-supporting-paragraph'>Book premium verified top-tier salons, home maintenance repair experts, and custom helpers right around your local neighborhood.</p>
+                                <a class='btn-hero-action' href='#'>Explore Marketplace</a>
+                            </div>
+                        </section>
+                    </b:includable>
+                </b:widget>
+
+                <b:widget id='HTML51' locked='false' title='Marketplace Advantage Features' type='HTML' version='2'>
+                    <b:includable id='main'>
+                        <section class='marketplace-features-section'>
+                            <h2 class='block-heading-title'>Why Choose Antinna Platforms?</h2>
+                            <div class='responsive-cards-grid'>
+                                <div class='feature-deck-card'>
+                                    <div class='feature-badge-icon'>&#128736;</div>
+                                    <h3 class='feature-inner-title'>Verified Experts</h3>
+                                    <p class='feature-inner-description'>Every service expert partner undergoes dynamic checks to guarantee professional outcomes.</p>
+                                </div>
+                                <div class='feature-deck-card'>
+                                    <div class='feature-badge-icon'>&#9200;</div>
+                                    <h3 class='feature-inner-title'>Instant Scheduling</h3>
+                                    <p class='feature-inner-description'>Secure slots effortlessly around the clock via live reservation management modules.</p>
+                                </div>
+                                <div class='feature-deck-card'>
+                                    <div class='feature-badge-icon'>&#128179;</div>
+                                    <h3 class='feature-inner-title'>Transparent Pricing</h3>
+                                    <p class='feature-inner-description'>No hidden service fees. See clear estimates directly upfront before confirmation.</p>
+                                </div>
+                            </div>
+                        </section>
+                    </b:includable>
+                </b:widget>
+
+                <b:widget id='Blog1' locked='true' title='Dynamic Marketplace Feed Listing' type='Blog' version='2'>
+                    <b:includable id='main'>
+                        <section class='dynamic-posts-loop-section'>
+                            <h2 class='block-heading-title'>Featured Outlets &amp; Announcements</h2>
+                            <div class='base-posts-outline-container'>
+                                <b:loop values='data:posts' var='post'>
+                                    <article class='curriculum-module-card'>
+                                        <h3 class='post-loop-title'><data:post.title/></h3>
+                                        <div class='post-body-summary-pane'>
+                                            <data:post.body/>
+                                        </div>
+                                    </article>
+                                </b:loop>
+                            </div>
+                        </section>
+                    </b:includable>
+                </b:widget>
+
+            </b:section>
+        </main>
+    </div>
+
+    <script type='text/javascript'>//<![CDATA[
+        /* [PASTE ALL CONTENTS OF THE script.js FILE BELOW HERE] */
+    //]]></script>
+</body>
+</html>
