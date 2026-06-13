@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:css='false' b:defaultmessages='true' b:layoutsVersion='3' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+    <meta charset='UTF-8'/>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover' name='viewport'/>
+    <title><data:blog.pageTitle/></title>
+    
+    <b:skin><![CDATA[
+        /* ==========================================================================
+           PASTE ALL THE CONTENTS OF 'style.css' DIRECTLY INSIDE THIS BLOCK
+           ========================================================================== */
+    ]]></b:skin>
+</head>
+<body>
+
+    <!-- Clickable dark screen overlay shadow for mobile layout draws -->
+    <div id='sidebar-backdrop' onclick='toggleSidebarDrawer()'></div>
+
+    <div class='app-container'>
+        
+        <!-- SIDEBAR DRAWER COMPONENT -->
+        <aside id='sidebar-drawer'>
+            
+            <!-- Fixed Layout Top branding Header -->
+            <div class='sidebar-header'>
+                <div class='brand-logo'>
+                    <span class='brand-icon'>A</span>
+                    <span class='brand-text'>Antinna</span>
+                </div>
+                <button class='btn-close-sidebar' onclick='toggleSidebarDrawer()'>&#215;</button>
+            </div>
+
+            <!-- Dynamic Scroll Container Viewport Layer -->
+            <div class='sidebar-scroll-content'>
+                
+                <!-- Primary Application Core Static Navigation Paths -->
+                <div class='desktop-nav-fallback'>
+                    <ul class='sidebar-static-links'>
+                        <li><a class='nav-route-link' href='/'>Home</a></li>
+                        <li><a class='nav-route-link' href='/search/label/Services'>Services</a></li>
+                        <li><a class='nav-route-link' href='/search/label/Salons'>Salons</a></li>
+                        <li><a class='nav-route-link' href='/p/bookings.html'>Bookings</a></li>
+                    </ul>
+                </div>
+
+                <!-- Workspace Options Accordion Menu Area (Managed via Blogger LinkList Widget) -->
+                <div class='sidebar-modules-area'>
+                    <b:section class='sidebar-modules-section' id='sidebar-workspace-links' maxwidgets='1' showaddelement='yes'>
+                        <b:widget id='LinkList3' locked='false' title='Workspace Menu' type='LinkList' version='2'>
+                            <b:widget-settings>
+                                <b:widget-setting name='text-0'>Nearby Helpers</b:widget-setting>
+                                <b:widget-setting name='link-0'>#</b:widget-setting>
+                                <b:widget-setting name='text-1'>Active Bookings</b:widget-setting>
+                                <b:widget-setting name='link-1'>#</b:widget-setting>
+                                <b:widget-setting name='text-2'>Customer Reviews</b:widget-setting>
+                                <b:widget-setting name='link-2'>#</b:widget-setting>
+                            </b:widget-settings>
+                            <b:includable id='main'>
+                                <div class='module-wrapper'>
+                                    <button class='module-trigger' onclick='toggleModuleDropdown("workspace-module")'>
+                                        <span>Workspace Options</span>
+                                        <span class='arrow-indicator initial-open' id='workspace-module-arrow'>▾</span>
+                                    </button>
+                                    <ul class='module-dropdown-list' id='workspace-module'>
+                                        <b:loop values='data:links' var='link'>
+                                            <li>
+                                                <a class='nav-route-link' expr:href='data:link.target'><data:link.name/></a>
+                                            </li>
+                                        </b:loop>
+                                    </ul>
+                                </div>
+                            </b:includable>
+                        </b:widget>
+                    </b:section>
+                </div>
+
+                <!-- Platform Legal Privacy Policy Links Framework Managed via Blogger Backend LinkList Widget -->
+                <div class='sidebar-legal-area'>
+                    <b:section class='sidebar-legal-section' id='sidebar-legal-links' maxwidgets='1' showaddelement='yes'>
+                        <b:widget id='LinkList2' locked='false' title='Legal Pages Menu' type='LinkList' version='2'>
+                            <b:widget-settings>
+                                <b:widget-setting name='text-0'>Privacy Policy</b:widget-setting>
+                                <b:widget-setting name='link-0'>/p/privacy-policy.html</b:widget-setting>
+                                <b:widget-setting name='text-1'>Terms &amp; Conditions</b:widget-setting>
+                                <b:widget-setting name='link-1'>/p/terms-conditions.html</b:widget-setting>
+                                <b:widget-setting name='text-2'>Refund Policy</b:widget-setting>
+                                <b:widget-setting name='link-2'>/p/refund-cancellation.html</b:widget-setting>
+                                <b:widget-setting name='text-3'>Disclaimer</b:widget-setting>
+                                <b:widget-setting name='link-3'>/p/disclaimer.html</b:widget-setting>
+                            </b:widget-settings>
+                            <b:includable id='main'>
+                                <div class='module-wrapper'>
+                                    <button class='module-trigger' onclick='toggleModuleDropdown("legal-policy-module")'>
+                                        <span>Policies &amp; Legal</span>
+                                        <span class='arrow-indicator' id='legal-policy-module-arrow'>▾</span>
+                                    </button>
+                                    <ul class='module-dropdown-list ui-hidden' id='legal-policy-module'>
+                                        <b:loop values='data:links' var='link'>
+                                            <li>
+                                                <a class='nav-route-link' expr:href='data:link.target'><data:link.name/></a>
+                                            </li>
+                                        </b:loop>
+                                    </ul>
+                                </div>
+                            </b:includable>
+                        </b:widget>
+                    </b:section>
+                </div>
+
+                <!-- Platform Social Accounts Profile Hyperlink Matrix -->
+                <div class='sidebar-social-wrapper'>
+                    &lt;a aria-label='YouTube' class='social-icon-link' href='https://www.youtube.com/@Antinna' target='_blank'&gt;
+                        &lt;svg fill='none' height='18' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='18'&gt;&lt;path d='M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z'/&gt;&lt;polygon points='9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02'/&gt;&lt;/svg&gt;
+                    &lt;/a&gt;
+                    &lt;a aria-label='Instagram' class='social-icon-link' href='https://www.instagram.com/antinna.yt' target='_blank'&gt;
+                        &lt;svg fill='none' height='18' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='18'&gt;&lt;rect height='20' rx='5' ry='5' width='20' x='2' y='2'/&gt;&lt;path d='M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z'/&gt;&lt;line x1='17.5' x2='17.51' y1='6.5' y2='6.5'/&gt;&lt;/svg&gt;
+                    &lt;/a&gt;
+                    &lt;a aria-label='Facebook' class='social-icon-link' href='https://www.facebook.com/profile.php?id=100082961891641' target='_blank'&gt;
+                        &lt;svg fill='none' height='18' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='18'&gt;&lt;path d='M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z'/&gt;&lt;/svg&gt;
+                    &lt;/a&gt;
+                    &lt;a aria-label='Play Store' class='social-icon-link' href='https://play.google.com/store/apps/dev?id=7417258411166270372' target='_blank'&gt;
+                        &lt;svg fill='none' height='18' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' viewBox='0 0 24 24' width='18'&gt;&lt;rect height='20' rx='2' ry='2' width='14' x='5' y='2'/&gt;&lt;line x1='12' x2='12.01' y1='18' y2='18'/&gt;&lt;/svg&gt;
+                    &lt;/a&gt;
+                </div>
+
+            </div>
+
+            <!-- Fixed Gemini-Style Avatar Footer Row Panel Component -->
+            <div class='avatar-footer-row'>
+                <div class='avatar-left-info'>
+                    <div class='user-avatar-circle'><span>U</span></div>
+                    <div class='user-meta-strings'>
+                        <span class='user-display-name'>Guest User</span>
+                        <span class='user-display-role'>Workspace Client</span>
+                    </div>
+                </div>
+                <button aria-label='Settings' class='btn-settings-gear' onclick='alert("Settings panel active!")'>&#9881;</button>
+            </div>
+        </aside>
+
+        <!-- MAIN DASHBOARD CONTENT AREA VIEWPORT LAYOUT WRAPPER -->
+        <div class='main-view-wrapper'>
+            
+            <!-- Global Platform Search Bar Strip Header -->
+            <header class='top-navbar-header'>
+                <div class='header-left'>
+                    <button class='btn-hamburger' onclick='toggleSidebarDrawer()'>&#9776;</button>
+                </div>
+                
+                <div class='header-center-search'>
+                    <div class='search-container'>
+                        <div class='search-icon'>
+                            &lt;svg fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'&gt;
+                                &lt;path d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'&gt;&lt;/path&gt;
+                            &lt;/svg&gt;
+                        </div>
+                        <form action='/search' method='get'>
+                            <input class='search-input' name='q' placeholder='Search marketplace services...' type='text'/>
+                        </form>
+                    </div>
+                </div>
+
+                <div class='header-right'>
+                    <button class='btn-theme-toggle' id='theme-mode-switcher'>
+                        <span class='mode-icon icon-moon'>&#9790;</span>
+                        <span class='mode-icon icon-sun ui-hidden'>&#9728;</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Primary Feed Workspace Window Mount Section -->
+            <main class='scrollable-main-content'>
+                <b:section class='main-feed-section' id='main-feed-stream' showelement='yes'>
+                </b:section>
+            </main>
+
+        </div>
+    </div>
+
+    <!-- STICKY MOBILE TAB-BAR NAVIGATION SYSTEM -->
+    <b:section class='mobile-bottom-navigation-bar' id='sidebar-widgets' maxwidgets='5' showaddelement='yes'>
+        <b:widget id='LinkList1' locked='false' title='Navigation Menu' type='LinkList' version='2'>
+            <b:widget-settings>
+                <b:widget-setting name='text-0'>Home</b:widget-setting>
+                <b:widget-setting name='link-0'>/</b:widget-setting>
+                <b:widget-setting name='text-1'>Services</b:widget-setting>
+                <b:widget-setting name='link-1'>/search/label/Services</b:widget-setting>
+                <b:widget-setting name='text-2'>Salons</b:widget-setting>
+                <b:widget-setting name='link-2'>/search/label/Salons</b:widget-setting>
+                <b:widget-setting name='text-3'>Bookings</b:widget-setting>
+                <b:widget-setting name='link-3'>/p/bookings.html</b:widget-setting>
+            </b:widget-settings>
+            <b:includable id='main'>
+                <ul class='bottom-nav-list'>
+                    <b:loop values='data:links' var='link'>
+                        <li class='bottom-nav-item'>
+                            <a class='nav-route-link' expr:href='data:link.target'>
+                                <span class='bottom-nav-icon-dot'>•</span>
+                                <span class='bottom-nav-text'><data:link.name/></span>
+                            </a>
+                        </li>
+                    </b:loop>
+                </ul>
+            </b:includable>
+        </b:widget>
+    </b:section>
+
+    <script type='text/javascript'>//<![CDATA[
+        /* ==========================================================================
+           PASTE ALL THE CONTENTS OF 'script.js' DIRECTLY INSIDE THIS BLOCK
+           ========================================================================== */
+    //]]></script>
+</body>
+</html>
