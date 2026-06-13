@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:css='false' b:defaultmessages='true' b:layoutsVersion='3' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+    <meta charset='UTF-8'/>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' name='viewport'/>
+    <title><data:blog.pageTitle/></title>
+    
+    <b:skin><![CDATA[
+        /* [PASTE ALL CONTENTS OF style.css BELOW HERE] */
+    ]]></b:skin>
+</head>
+<body>
+
+    <div id='sidebar-backdrop' onclick='toggleSidebarDrawer()'></div>
+
+    <div class='app-container'>
+        
+        <aside id='sidebar-drawer'>
+            <div class='sidebar-header'>
+                <div class='brand-logo'>
+                    <span class='brand-icon'>A</span>
+                    <span class='brand-text'>Antinna</span>
+                </div>
+                <button class='btn-close-sidebar' onclick='toggleSidebarDrawer()'>&#215;</button>
+            </div>
+
+            <div class='desktop-nav-fallback'>
+                <ul class='sidebar-static-links'>
+                    <li><a class='nav-route-link' href='/'>Home</a></li>
+                    <li><a class='nav-route-link' href='/search/label/Services'>Services</a></li>
+                    <li><a class='nav-route-link' href='/search/label/Salons'>Salons</a></li>
+                    <li><a class='nav-route-link' href='/p/bookings.html'>Bookings</a></li>
+                </ul>
+            </div>
+
+            <div class='sidebar-modules-area'>
+                <div class='module-wrapper'>
+                    <button class='module-trigger expanded' id='workspace-trigger-btn' onclick='toggleModuleDropdown("workspace-module")'>
+                        <span>Workspace Options</span>
+                        <span class='arrow-indicator' id='workspace-module-arrow'>▾</span>
+                    </button>
+                    <ul class='module-dropdown-list' id='workspace-module'>
+                        <li><a href='#'>Nearby Helpers</a></li>
+                        <li><a href='#'>Active Bookings</a></li>
+                        <li><a href='#'>Customer Reviews</a></li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+
+        <div class='main-view-wrapper'>
+            
+            <header class='top-navbar-header'>
+                <div class='header-left'>
+                    <button class='btn-hamburger' onclick='toggleSidebarDrawer()'>&#9776;</button>
+                </div>
+                
+                <div class='header-center-search'>
+                    <div class='search-container'>
+                        <div class='search-icon'>
+                            <svg fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+                                <path d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'></path>
+                            </svg>
+                        </div>
+                        <form action='/search' method='get'>
+                            <input class='search-input' name='q' placeholder='Search marketplace services...' type='text'/>
+                        </form>
+                    </div>
+                </div>
+
+                <div class='header-right'>
+                    <button class='btn-theme-toggle' id='theme-mode-switcher'>
+                        <span class='mode-icon icon-moon'>&#9790;</span>
+                        <span class='mode-icon icon-sun ui-hidden'>&#9728;</span>
+                    </button>
+                </div>
+            </header>
+
+            <main class='scrollable-main-content'>
+                <b:section class='main-feed-section' id='main-feed-stream' showelement='yes'>
+                    </b:section>
+            </main>
+
+        </div>
+    </div>
+
+    <b:section class='mobile-bottom-navigation-bar' id='sidebar-widgets' maxwidgets='5' showaddelement='yes'>
+        <b:widget id='LinkList1' locked='false' title='Navigation Menu' type='LinkList' version='2'>
+            <b:widget-settings>
+                <b:widget-setting name='text-0'>Home</b:widget-setting>
+                <b:widget-setting name='link-0'>/</b:widget-setting>
+                <b:widget-setting name='text-1'>Services</b:widget-setting>
+                <b:widget-setting name='link-1'>/search/label/Services</b:widget-setting>
+                <b:widget-setting name='text-2'>Salons</b:widget-setting>
+                <b:widget-setting name='link-2'>/search/label/Salons</b:widget-setting>
+                <b:widget-setting name='text-3'>Bookings</b:widget-setting>
+                <b:widget-setting name='link-3'>/p/bookings.html</b:widget-setting>
+            </b:widget-settings>
+            <b:includable id='main'>
+                <ul class='bottom-nav-list'>
+                    <b:loop values='data:links' var='link'>
+                        <li class='bottom-nav-item'>
+                            <a class='nav-route-link' expr:href='data:link.target'>
+                                <span class='bottom-nav-icon-dot'>•</span>
+                                <span class='bottom-nav-text'><data:link.name/></span>
+                            </a>
+                        </li>
+                    </b:loop>
+                </ul>
+            </b:includable>
+        </b:widget>
+    </b:section>
+
+    <script type='text/javascript'>//<![CDATA[
+        /* [PASTE ALL CONTENTS OF script.js BELOW HERE] */
+    //]]></script>
+</body>
+</html>
